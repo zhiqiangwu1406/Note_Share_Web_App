@@ -9,7 +9,8 @@
     // See also https://aka.ms/tsconfig/module
     "module": "es6",
     "target": "es6",
-    "types": ["node", "express"],
+    "typeRoots": ["./node_modules/@types"],
+    "moduleResolution": "node",
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],

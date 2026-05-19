@@ -10,10 +10,9 @@
     "module": "es6",
     "target": "es6",
     "typeRoots": ["./node_modules/@types"],
-    "moduleResolution": "node",
     // For nodejs:
     // "lib": ["esnext"],
-    // "types": ["node"],
+    "types": ["node"],
     // and npm install -D @types/node
 
     // Other Outputs

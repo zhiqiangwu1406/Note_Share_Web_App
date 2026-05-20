@@ -4,7 +4,7 @@ import { User } from "../models/User";
 import { generateToken } from "../utils/generateToken";
 import { asyncHandler } from "../utils/asyncHandler";
 import type { AuthRequest } from "../middlewares/protectRoute";
-import bcrypt from "bcrypt";
+
 export const registerController = asyncHandler(
   async (req: Request, res: Response) => {
     const { username, email, password }: userType = await req.body;
@@ -60,7 +60,7 @@ export const logoutController = asyncHandler(
     res.cookie("token", "", {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
+      sameSite: "none",
       maxAge: 0,
     });
     res.status(200).json({ message: "User logout." });

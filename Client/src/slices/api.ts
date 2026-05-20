@@ -4,7 +4,7 @@ export const apiSlice = createApi({
   reducerPath: "apiSlice",
   baseQuery: fetchBaseQuery({
     baseUrl: import.meta.env.PROD
-      ? import.meta.env.SERVER_API
+      ? import.meta.env.VITE_SERVER_API
       : import.meta.env.VITE_LOCAL_API_URL,
   }),
   endpoints: () => ({}),

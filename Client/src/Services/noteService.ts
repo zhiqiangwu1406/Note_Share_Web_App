@@ -11,7 +11,6 @@ export const getNotes = async () => {
     // const response = await fetch(`${API_URL}/notes`);
     // const data = await response.json();
     // return data.notes;
-    console.log(`${API_URL}/notes`);
 
     const response = await axios.get(`${API_URL}/notes`);
     return response.data.notes;

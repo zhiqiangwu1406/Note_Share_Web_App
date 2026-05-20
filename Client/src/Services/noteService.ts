@@ -1,8 +1,9 @@
 import axios from "axios";
 
-const API_URL = import.meta.env.PROD
-  ? import.meta.env.SERVER_API
-  : import.meta.env.VITE_LOCAL_API_URL;
+const API_URL =
+  import.meta.env.VITE_MODE === "production"
+    ? import.meta.env.SERVER_API
+    : import.meta.env.VITE_LOCAL_API_URL;
 
 console.log(API_URL);
 
@@ -13,6 +14,8 @@ export const getNotes = async () => {
     // const response = await fetch(`${API_URL}/notes`);
     // const data = await response.json();
     // return data.notes;
+    console.log(`${API_URL}/notes`);
+
     const response = await axios.get(`${API_URL}/notes`);
     return response.data.notes;
   } catch (err) {

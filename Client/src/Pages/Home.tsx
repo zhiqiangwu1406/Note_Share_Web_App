@@ -60,7 +60,7 @@ function Home() {
     <section className="max-w-5xl mx-auto">
       <h2 className="text-2xl font-semibold my-4 text-center">Note List</h2>
       <form onSubmit={submitHandler}>
-        {notes.map((note, index) => (
+        {notes?.map((note, index) => (
           <div key={index} className="flex items-center justify-between my-4">
             <div>
               <p className="text-lg py-2">{note.title} </p>

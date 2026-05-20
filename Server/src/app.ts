@@ -13,10 +13,11 @@ const app = express();
 const PORT = process.env.PORT || "3000";
 app.use(
   cors({
-    origin:
-      process.env.NODE_ENV === "production"
-        ? process.env.API
-        : process.env.LOCAL_API,
+    origin: [
+      process.env.API,
+      process.env.LOCAL_API,
+      process.env.CUSTOM_DOMAIN,
+    ] as string[],
     credentials: true,
   }),
 );

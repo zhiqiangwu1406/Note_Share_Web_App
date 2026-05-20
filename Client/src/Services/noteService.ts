@@ -1,11 +1,8 @@
 import axios from "axios";
 
-const API_URL =
-  import.meta.env.VITE_MODE === "production"
-    ? import.meta.env.SERVER_API
-    : import.meta.env.VITE_LOCAL_API_URL;
-
-console.log(API_URL);
+const API_URL = import.meta.env.PROD
+  ? import.meta.env.VITE_SERVER_API
+  : import.meta.env.VITE_LOCAL_API_URL;
 
 axios.defaults.withCredentials = true;
 
